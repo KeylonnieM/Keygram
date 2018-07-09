@@ -13,9 +13,11 @@
 		13DCEF4620F4147D004871EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13DCEF4520F4147D004871EC /* Assets.xcassets */; };
 		13DCEF4920F4147D004871EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13DCEF4720F4147D004871EC /* LaunchScreen.storyboard */; };
 		13DCEF4C20F4147D004871EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13DCEF4B20F4147D004871EC /* main.m */; };
+		7869F75F13B1A6ED8E508F87 /* libPods-Keygram.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CD0158C6B1D354865B1104 /* libPods-Keygram.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00CD0158C6B1D354865B1104 /* libPods-Keygram.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Keygram.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13DCEF3920F4147C004871EC /* Keygram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keygram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13DCEF3C20F4147C004871EC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		13DCEF3D20F4147D004871EC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -26,6 +28,8 @@
 		13DCEF4820F4147D004871EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13DCEF4A20F4147D004871EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13DCEF4B20F4147D004871EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		34E8D7B80CE4C9BF071BADF8 /* Pods-Keygram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Keygram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Keygram/Pods-Keygram.debug.xcconfig"; sourceTree = "<group>"; };
+		B146C37E1BEF1EA1AFE343C2 /* Pods-Keygram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Keygram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Keygram/Pods-Keygram.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7869F75F13B1A6ED8E508F87 /* libPods-Keygram.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				13DCEF3B20F4147C004871EC /* Keygram */,
 				13DCEF3A20F4147C004871EC /* Products */,
+				70173683C799E9F314555B04 /* Pods */,
+				E80B0FD5E67F884AF0E209F8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +78,23 @@
 			path = Keygram;
 			sourceTree = "<group>";
 		};
+		70173683C799E9F314555B04 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				34E8D7B80CE4C9BF071BADF8 /* Pods-Keygram.debug.xcconfig */,
+				B146C37E1BEF1EA1AFE343C2 /* Pods-Keygram.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E80B0FD5E67F884AF0E209F8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00CD0158C6B1D354865B1104 /* libPods-Keygram.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13DCEF4F20F4147D004871EC /* Build configuration list for PBXNativeTarget "Keygram" */;
 			buildPhases = (
+				E07F4D0442AF8CC3DB3852DA /* [CP] Check Pods Manifest.lock */,
 				13DCEF3520F4147C004871EC /* Sources */,
 				13DCEF3620F4147C004871EC /* Frameworks */,
 				13DCEF3720F4147C004871EC /* Resources */,
+				6E4A562B340881CA3598A704 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -135,6 +161,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6E4A562B340881CA3598A704 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Keygram/Pods-Keygram-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/Parse/Parse.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Parse.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Keygram/Pods-Keygram-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E07F4D0442AF8CC3DB3852DA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Keygram-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		13DCEF3520F4147C004871EC /* Sources */ = {
@@ -281,6 +346,7 @@
 		};
 		13DCEF5020F4147D004871EC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34E8D7B80CE4C9BF071BADF8 /* Pods-Keygram.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +364,7 @@
 		};
 		13DCEF5120F4147D004871EC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B146C37E1BEF1EA1AFE343C2 /* Pods-Keygram.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
