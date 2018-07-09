@@ -20,9 +20,9 @@
     // Override point for customization after application launch.
    ParseClientConfiguration *config = [ParseClientConfiguration   configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
             
-            configuration.applicationId = @"codepathInstagram";
-            configuration.clientKey = @"codepathInstagramMaster";
-            configuration.server = @"http://codepathfbinstagram.herokuapp.com/parse";
+            configuration.applicationId = @"2829969";
+            configuration.clientKey = @"lenorakey1999";
+            configuration.server = @"http://keygram.herokuapp.com/parse";
         }];
         
         [Parse initializeWithConfiguration:config];
