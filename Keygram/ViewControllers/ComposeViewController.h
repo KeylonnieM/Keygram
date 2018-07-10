@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ComposeViewController : UIViewController 
+@property (weak, nonatomic) IBOutlet UITextView *captionText;
+@property (weak, nonatomic) IBOutlet UIImageView *postedImage;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *postButton;
 
 @end

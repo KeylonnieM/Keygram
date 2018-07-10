@@ -7,5 +7,7 @@ target 'Keygram' do
 
   # Pods for Keygram
    pod 'Parse'
+   pod 'ParseUI'
+   pod 'DateTools'
 
 end

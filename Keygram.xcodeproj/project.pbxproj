@@ -17,6 +17,8 @@
 		13DCEF6020F423B1004871EC /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13DCEF5F20F423B1004871EC /* PostCell.m */; };
 		13DCEF6620F43266004871EC /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13DCEF6520F43266004871EC /* ComposeViewController.m */; };
 		13DCEF6C20F439B1004871EC /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 13DCEF6B20F439B1004871EC /* Post.m */; };
+		13DCEF6F20F48ADB004871EC /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13DCEF6E20F48ADB004871EC /* DetailsViewController.m */; };
+		13DCEF7220F4920A004871EC /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13DCEF7120F4920A004871EC /* ProfileViewController.m */; };
 		7869F75F13B1A6ED8E508F87 /* libPods-Keygram.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CD0158C6B1D354865B1104 /* libPods-Keygram.a */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +42,10 @@
 		13DCEF6520F43266004871EC /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 		13DCEF6A20F439B1004871EC /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		13DCEF6B20F439B1004871EC /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		13DCEF6D20F48ADB004871EC /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		13DCEF6E20F48ADB004871EC /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		13DCEF7020F4920A004871EC /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		13DCEF7120F4920A004871EC /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		34E8D7B80CE4C9BF071BADF8 /* Pods-Keygram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Keygram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Keygram/Pods-Keygram.debug.xcconfig"; sourceTree = "<group>"; };
 		B146C37E1BEF1EA1AFE343C2 /* Pods-Keygram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Keygram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Keygram/Pods-Keygram.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +108,10 @@
 				13DCEF5C20F41E16004871EC /* FeedViewController.m */,
 				13DCEF6420F43266004871EC /* ComposeViewController.h */,
 				13DCEF6520F43266004871EC /* ComposeViewController.m */,
+				13DCEF6D20F48ADB004871EC /* DetailsViewController.h */,
+				13DCEF6E20F48ADB004871EC /* DetailsViewController.m */,
+				13DCEF7020F4920A004871EC /* ProfileViewController.h */,
+				13DCEF7120F4920A004871EC /* ProfileViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -198,11 +208,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Keygram/Pods-Keygram-resources.sh",
+				"${PODS_ROOT}/DateTools/DateTools/DateTools/DateTools.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/Parse/Parse.bundle",
+				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/en.lproj",
+				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/fr.lproj",
+				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/pt-BR.lproj",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DateTools.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Parse.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/fr.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pt-BR.lproj",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -235,12 +253,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				13DCEF4C20F4147D004871EC /* main.m in Sources */,
+				13DCEF7220F4920A004871EC /* ProfileViewController.m in Sources */,
 				13DCEF3E20F4147D004871EC /* AppDelegate.m in Sources */,
 				13DCEF5D20F41E16004871EC /* FeedViewController.m in Sources */,
 				13DCEF6620F43266004871EC /* ComposeViewController.m in Sources */,
 				13DCEF5A20F41B89004871EC /* LoginViewController.m in Sources */,
 				13DCEF6020F423B1004871EC /* PostCell.m in Sources */,
 				13DCEF6C20F439B1004871EC /* Post.m in Sources */,
+				13DCEF6F20F48ADB004871EC /* DetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
