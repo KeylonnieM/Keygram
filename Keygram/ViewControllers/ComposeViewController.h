@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ComposeViewController.h
 //  Keygram
 //
 //  Created by Keylonnie Miller on 7/9/18.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ComposeViewController : UIViewController 
 
 @end
-

@@ -22,21 +22,17 @@
             
             configuration.applicationId = @"2829969";
             configuration.clientKey = @"lenorakey1999";
-            configuration.server = @"http://keygram.herokuapp.com/parse";
+            configuration.server = @"https://keygram.herokuapp.com/parse";
         }];
         
         [Parse initializeWithConfiguration:config];
-    PFObject *gameScore = [PFObject objectWithClassName:@"GameScore"];
-    gameScore[@"score"] = @1337;
-    gameScore[@"playerName"] = @"Sean Plott";
-    gameScore[@"cheatMode"] = @NO;
-    [gameScore saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
-            NSLog(@"Object saved!");
-        } else {
-            NSLog(@"Error: %@", error.description);
-        }
-    }];
+    
+    //Check if the user is currently logged in and direct them pass the login screen.
+    if (PFUser.currentUser) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        
+        self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"FeedTabController"];
+    }
     return YES;
 }
 
