@@ -9,5 +9,6 @@ target 'Keygram' do
    pod 'Parse'
    pod 'ParseUI'
    pod 'DateTools'
+   pod 'MBProgressHUD'
 
 end

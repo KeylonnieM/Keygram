@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		136E300320F91788009B4180 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 136E300220F91788009B4180 /* User.m */; };
+		136E300620F94BE3009B4180 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 136E300520F94BE3009B4180 /* EditProfileViewController.m */; };
+		136E300920F965BC009B4180 /* ProfileCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 136E300820F965BC009B4180 /* ProfileCollectionCell.m */; };
+		137F23CA20F6A74800C83A8C /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 137F23C920F6A74800C83A8C /* TabBarController.m */; };
 		13DCEF3E20F4147D004871EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13DCEF3D20F4147D004871EC /* AppDelegate.m */; };
 		13DCEF4420F4147D004871EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13DCEF4220F4147D004871EC /* Main.storyboard */; };
 		13DCEF4620F4147D004871EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13DCEF4520F4147D004871EC /* Assets.xcassets */; };
@@ -19,11 +23,22 @@
 		13DCEF6C20F439B1004871EC /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 13DCEF6B20F439B1004871EC /* Post.m */; };
 		13DCEF6F20F48ADB004871EC /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13DCEF6E20F48ADB004871EC /* DetailsViewController.m */; };
 		13DCEF7220F4920A004871EC /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13DCEF7120F4920A004871EC /* ProfileViewController.m */; };
+		13DCEF9920F57382004871EC /* LobsterTwo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13DCEF9720F57371004871EC /* LobsterTwo-Regular.ttf */; };
+		13DCEF9A20F57388004871EC /* LobsterTwo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13DCEF9820F5737A004871EC /* LobsterTwo-Bold.ttf */; };
+		13DCEF9B20F5738C004871EC /* Galada-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13DCEF9620F57363004871EC /* Galada-Regular.ttf */; };
 		7869F75F13B1A6ED8E508F87 /* libPods-Keygram.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CD0158C6B1D354865B1104 /* libPods-Keygram.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		00CD0158C6B1D354865B1104 /* libPods-Keygram.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Keygram.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		136E300120F91788009B4180 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		136E300220F91788009B4180 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		136E300420F94BE3009B4180 /* EditProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
+		136E300520F94BE3009B4180 /* EditProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
+		136E300720F965BC009B4180 /* ProfileCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileCollectionCell.h; sourceTree = "<group>"; };
+		136E300820F965BC009B4180 /* ProfileCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileCollectionCell.m; sourceTree = "<group>"; };
+		137F23C820F6A74800C83A8C /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		137F23C920F6A74800C83A8C /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		13DCEF3920F4147C004871EC /* Keygram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keygram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13DCEF3C20F4147C004871EC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		13DCEF3D20F4147D004871EC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -46,6 +61,9 @@
 		13DCEF6E20F48ADB004871EC /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		13DCEF7020F4920A004871EC /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		13DCEF7120F4920A004871EC /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		13DCEF9620F57363004871EC /* Galada-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Galada-Regular.ttf"; sourceTree = "<group>"; };
+		13DCEF9720F57371004871EC /* LobsterTwo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LobsterTwo-Regular.ttf"; sourceTree = "<group>"; };
+		13DCEF9820F5737A004871EC /* LobsterTwo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LobsterTwo-Bold.ttf"; sourceTree = "<group>"; };
 		34E8D7B80CE4C9BF071BADF8 /* Pods-Keygram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Keygram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Keygram/Pods-Keygram.debug.xcconfig"; sourceTree = "<group>"; };
 		B146C37E1BEF1EA1AFE343C2 /* Pods-Keygram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Keygram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Keygram/Pods-Keygram.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +101,7 @@
 		13DCEF3B20F4147C004871EC /* Keygram */ = {
 			isa = PBXGroup;
 			children = (
+				13DCEF9520F57147004871EC /* Fonts */,
 				13DCEF5220F41B5A004871EC /* ViewControllers */,
 				13DCEF3C20F4147C004871EC /* AppDelegate.h */,
 				13DCEF3D20F4147D004871EC /* AppDelegate.m */,
@@ -95,6 +114,10 @@
 				13DCEF5F20F423B1004871EC /* PostCell.m */,
 				13DCEF6A20F439B1004871EC /* Post.h */,
 				13DCEF6B20F439B1004871EC /* Post.m */,
+				136E300120F91788009B4180 /* User.h */,
+				136E300220F91788009B4180 /* User.m */,
+				136E300720F965BC009B4180 /* ProfileCollectionCell.h */,
+				136E300820F965BC009B4180 /* ProfileCollectionCell.m */,
 			);
 			path = Keygram;
 			sourceTree = "<group>";
@@ -112,8 +135,22 @@
 				13DCEF6E20F48ADB004871EC /* DetailsViewController.m */,
 				13DCEF7020F4920A004871EC /* ProfileViewController.h */,
 				13DCEF7120F4920A004871EC /* ProfileViewController.m */,
+				137F23C820F6A74800C83A8C /* TabBarController.h */,
+				137F23C920F6A74800C83A8C /* TabBarController.m */,
+				136E300420F94BE3009B4180 /* EditProfileViewController.h */,
+				136E300520F94BE3009B4180 /* EditProfileViewController.m */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		13DCEF9520F57147004871EC /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				13DCEF9720F57371004871EC /* LobsterTwo-Regular.ttf */,
+				13DCEF9820F5737A004871EC /* LobsterTwo-Bold.ttf */,
+				13DCEF9620F57363004871EC /* Galada-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		70173683C799E9F314555B04 /* Pods */ = {
@@ -193,7 +230,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				13DCEF4920F4147D004871EC /* LaunchScreen.storyboard in Resources */,
+				13DCEF9A20F57388004871EC /* LobsterTwo-Bold.ttf in Resources */,
 				13DCEF4620F4147D004871EC /* Assets.xcassets in Resources */,
+				13DCEF9B20F5738C004871EC /* Galada-Regular.ttf in Resources */,
+				13DCEF9920F57382004871EC /* LobsterTwo-Regular.ttf in Resources */,
 				13DCEF4420F4147D004871EC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,7 +298,11 @@
 				13DCEF5D20F41E16004871EC /* FeedViewController.m in Sources */,
 				13DCEF6620F43266004871EC /* ComposeViewController.m in Sources */,
 				13DCEF5A20F41B89004871EC /* LoginViewController.m in Sources */,
+				136E300320F91788009B4180 /* User.m in Sources */,
 				13DCEF6020F423B1004871EC /* PostCell.m in Sources */,
+				136E300920F965BC009B4180 /* ProfileCollectionCell.m in Sources */,
+				136E300620F94BE3009B4180 /* EditProfileViewController.m in Sources */,
+				137F23CA20F6A74800C83A8C /* TabBarController.m in Sources */,
 				13DCEF6C20F439B1004871EC /* Post.m in Sources */,
 				13DCEF6F20F48ADB004871EC /* DetailsViewController.m in Sources */,
 			);

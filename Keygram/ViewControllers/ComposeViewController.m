@@ -8,6 +8,9 @@
 
 #import "ComposeViewController.h"
 #import "Post.h"
+#import "FeedViewController.h"
+#import "TabBarController.h"
+#import "MBProgressHUD.h"
 
 @interface ComposeViewController () < UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -27,26 +30,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
- // Get the image captured by the UIImagePickerController
- UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
- UIImage *editedImage = info[UIImagePickerControllerEditedImage];
- // Do something with the images
-    self.postedImage.image = originalImage;
-// Dismiss UIImagePickerController to go back to your original view controller
- [self dismissViewControllerAnimated:YES completion:nil];
- }
-
-- (IBAction)tappedPostButton:(UIBarButtonItem *)sender {
- [Post postUserImage:self.postedImage.image withCaption:self.captionText.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
-     if(succeeded){
-         NSLog(@"Posting was successful!");
-     }
-     else {
-         NSLog(@"Error posting :(");
-     }
- }];
-}
 
 - (void)cameraViewPresented {
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
@@ -71,6 +54,40 @@
     [self presentViewController:imagePickerVC animated:YES completion:nil];
 }
 
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(nonnull NSDictionary<NSString *,id> *)info {
+ // Get the image captured by the UIImagePickerController
+ UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
+ UIImage *editedImage = info[UIImagePickerControllerEditedImage];
+ // Do something with the images
+    editedImage = [self resizeImage:originalImage withSize:CGSizeMake(350, 295)];
+   self.postedImage.image = editedImage;
+// Dismiss UIImagePickerController to go back to your original view controller
+ [self dismissViewControllerAnimated:YES completion:nil];
+ }
+
+- (IBAction)tappedPostButton:(UIBarButtonItem *)sender {
+    // Display HUD right before the request is made
+    //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+ [Post postUserImage:self.postedImage.image withCaption:self.captionText.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+     if(succeeded){
+         NSLog(@"Posting was successful!");
+         //[MBProgressHUD hideHUDForView:self.view animated:YES];
+         //Transition back to home page
+     }
+     else {
+         NSLog(@"Error posting :(");
+     }
+ }];
+    self.tabBarController.selectedIndex = 0;
+    [self.delegate fetchPosts];
+    self.postedImage.image = nil;
+}
+
+- (IBAction)tappedCancelButton:(UIBarButtonItem *)sender {
+    self.tabBarController.selectedIndex = 0;
+}
+
+
 - (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
  UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
  
@@ -84,14 +101,6 @@
  
  return newImage;
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

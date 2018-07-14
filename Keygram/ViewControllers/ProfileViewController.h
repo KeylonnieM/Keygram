@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ParseUI.h"
 
-@interface ProfileViewController : UIViewController
+@interface ProfileViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
+
+@property (weak, nonatomic) IBOutlet PFImageView *profileImage;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UIButton *editProfileButton;
+@property (weak, nonatomic) IBOutlet UILabel *profileBioLabel;
+@property (weak, nonatomic) IBOutlet UICollectionView *postGrid;
+@property (nonatomic, weak) PFUser *user;
 
 @end

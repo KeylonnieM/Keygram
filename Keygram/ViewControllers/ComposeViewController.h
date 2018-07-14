@@ -7,10 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FeedViewController.h"
 
-@interface ComposeViewController : UIViewController 
+@protocol ComposeViewControllerDelegate
+
+- (void)fetchPosts;
+
+@end
+
+@interface ComposeViewController : UIViewController < ComposeViewControllerDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
 @property (weak, nonatomic) IBOutlet UITextView *captionText;
 @property (weak, nonatomic) IBOutlet UIImageView *postedImage;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *postButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
+@property (nonatomic, weak) id<ComposeViewControllerDelegate> delegate;
+
 
 @end

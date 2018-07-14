@@ -7,13 +7,16 @@
 //
 
 #import "FeedViewController.h"
+#import "ComposeViewController.h"
+#import "AppDelegate.h"
+#import "LoginViewController.h"
 #import "Parse.h"
 #import "Post.h"
 #import "PostCell.h"
 #import "DateTools.h"
 #import "DetailsViewController.h"
 
-@interface FeedViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface FeedViewController ()<ComposeViewControllerDelegate,UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) NSArray *postFeed;
 
@@ -39,6 +42,9 @@
     [refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
     //Adding refresh information to the tableview
     [self.tableView insertSubview:refreshControl atIndex:0];
+    
+    //Setup Nav Title
+    //[self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor],NSFontAttributeName:[UIFont fontWithName:@"LobsterTwo" size:21]}];
 
 }
 
@@ -52,13 +58,14 @@
 PFQuery *postQuery = [Post query];
 [postQuery orderByDescending:@"createdAt"];
 [postQuery includeKey:@"author"];
-postQuery.limit = 20;
+postQuery.limit = 10;
     
 // fetch data asynchronously
 [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
     if (posts) {
         // do something with the data fetched
         self.postFeed = posts;
+        self.isMoreDataLoading = false;
         [self.tableView reloadData];
     }
     else {
@@ -76,8 +83,33 @@ postQuery.limit = 20;
 
 - (IBAction)tappedLogoutButton:(UIBarButtonItem *)sender {
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+        [self logoutAlert];
         // PFUser.current() will now be nil
-        [self performSegueWithIdentifier:@"MoveToLogin" sender:nil];
+        AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        appDelegate.window.rootViewController = loginViewController;
+    }];
+    
+}
+
+- (void)logoutAlert {
+    //initialize alert
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Logged Out"
+            message:@"You have been logged out successfully."
+            preferredStyle:(UIAlertControllerStyleAlert)];
+    
+    // create an OK action button for alert
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction * _Nonnull action) {
+                                                         // handle response here.
+                                                     }];
+    // add the OK action to the alert controller
+    [alert addAction:okAction];
+    
+    //Show the view controller
+    [self presentViewController:alert animated:YES completion:^{
     }];
 }
 
@@ -95,16 +127,36 @@ postQuery.limit = 20;
     return self.postFeed.count;
 }
 
+-(void)loadMoreData{
+    [self fetchPosts];
+}
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    if(!self.isMoreDataLoading){
+        // Calculate the position of one screen length before the bottom of the results
+        int scrollViewContentHeight = self.tableView.contentSize.height;
+        int scrollOffsetThreshold = scrollViewContentHeight - self.tableView.bounds.size.height;
+        
+        // When the user has scrolled past the threshold, start requesting
+        if(scrollView.contentOffset.y > scrollOffsetThreshold && self.tableView.isDragging) {
+            self.isMoreDataLoading = true;
+            [self loadMoreData];
+        }
+    }
+}
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
         if ([segue.identifier isEqual: @"MoveToDetails"]){
             PostCell *tappedPost = sender;
             Post *post = tappedPost.post;
-            NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedPost];
+            //NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedPost];
             DetailsViewController *detailsViewController = [segue destinationViewController];
             detailsViewController.post = post;
+        }
+        else {
+            ComposeViewController *composeController = [segue destinationViewController];
+            composeController.delegate = self;
         }
 }
 

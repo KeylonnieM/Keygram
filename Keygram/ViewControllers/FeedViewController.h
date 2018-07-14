@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface FeedViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *logoutButton;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (assign, nonatomic) BOOL isMoreDataLoading;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollingProperty;
+
 
 @end

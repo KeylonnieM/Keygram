@@ -18,11 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    /*CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = self.testView.bounds;
+    (void)(gradient.colors = @[(id)[UIColor whiteColor].CGColor,(id)[UIColor purpleColor].CGColor]);
+    [self.testView.layer addSublayer:gradient];*/
 }
 
 - (void)checkTextFieldsAlert {
@@ -66,8 +66,8 @@
 - (void)errorWithSignUp {
     //initialize alert
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Sign Up Error"
-                                                                   message:@"There was a problem signing up. Please try again."
-                                                            preferredStyle:(UIAlertControllerStyleAlert)];
+                message:@"There was a problem signing up. Please try again."
+                preferredStyle:(UIAlertControllerStyleAlert)];
     
     // create an OK action button for alert
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
@@ -81,6 +81,7 @@
     [self presentViewController:alert animated:YES completion:^{
     }];
 }
+
 
 - (void)registerUser {
     // initialize a user object
@@ -130,6 +131,12 @@
         }];
     }
 }
+
+- (IBAction)onTap:(UITapGestureRecognizer *)sender {
+    //Dismissing the keyboard
+    [self.overallView endEditing:YES];
+}
+
 
 - (IBAction)tappedSignUp:(UIButton *)sender {
     [self registerUser];

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7CD117243E7EA48576C6A2DD6206001F"
+               BlueprintIdentifier = "778AC90A0E3281F060F0F355D544E8CC"
                BlueprintName = "Pods-Keygram"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "libPods-Keygram.a">
